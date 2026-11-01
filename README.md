@@ -61,7 +61,13 @@ src/main/java/com/hmdp
 ├── entity/      数据库实体
 ├── dto/         Result、UserDTO 等传输对象
 └── utils/       常量、正则、密码加密、ThreadLocal 用户上下文
+
+docs/           设计文档（ROADMAP.md 为升级路线）
 ```
+
+## 升级路线
+
+Redis 优化的落地顺序、架构升级优先级、简历写法与压测数据获取方式，见 [docs/ROADMAP.md](docs/ROADMAP.md)。
 
 ## 约定
 
