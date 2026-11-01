@@ -1,0 +1,34 @@
+# ==========================================================
+# 本地配置模板 —— 这个文件可以安全提交到 GitHub
+#
+# 使用方法：
+#   1. 把本文件复制一份，改名为同目录下的 application.yaml
+#   2. 把下面 <尖括号> 里的占位值换成你机器上的真实值
+#   3. application.yaml 已被 .gitignore 忽略，密码不会上传
+# ==========================================================
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC
+    username: root
+    password: <你的 MySQL 密码>
+  redis:
+    host: <你的 Redis 地址，本机就写 127.0.0.1>
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.hmdp: debug

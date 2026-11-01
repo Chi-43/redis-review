@@ -1,0 +1,85 @@
+# ==========================================================
+# hm-dianping / 黑马点评  —— .gitignore
+# 目标：只把「源码 + 构建配置 + 建库脚本」推上 GitHub
+# ==========================================================
+
+# ---------- 本地真实配置（含数据库密码，绝对不能提交）----------
+# 克隆仓库后请复制 application.yaml.example 为 application.yaml 再填写密码
+src/main/resources/application.yaml
+src/main/resources/application.yml
+src/main/resources/application.properties
+src/main/resources/application-*.yaml
+src/main/resources/application-*.yml
+src/main/resources/application-*.properties
+.env
+*.env
+!.env.example
+
+# ---------- 构建产物（Maven）----------
+target/
+build/
+out/
+bin/
+*.class
+*.jar
+*.war
+!/.mvn/wrapper/maven-wrapper.jar
+
+# ---------- 构建辅助文件 ----------
+.mvn/timing.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+release.properties
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+
+# ---------- 日志与临时文件 ----------
+logs/
+*.log
+hs_err_pid*
+replay_pid*
+*.tmp
+*.bak
+*.orig
+*.swp
+*~
+
+# ---------- IntelliJ IDEA ----------
+# 注意：.idea/dataSources*.xml 里同样保存着数据库密码，所以整个目录忽略
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ---------- Eclipse / STS ----------
+.settings/
+.project
+.classpath
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache
+
+# ---------- VS Code ----------
+.vscode/
+
+# ---------- NetBeans ----------
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ---------- 操作系统 ----------
+Thumbs.db
+Desktop.ini
+.DS_Store
+._*
+*.lnk
+$RECYCLE.BIN/
+
+# ---------- 本地 Redis 落盘文件 ----------
+dump.rdb
+appendonly.aof
+*.aof
+*.rdb
